@@ -49,19 +49,19 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: 'Data Warehouse Modernization',
-    description: 'Migrated legacy data warehouse to Snowflake, optimizing query performance by 60% and reducing infrastructure costs.',
+    title: 'Covid Web: Tracking Covid-19 Through Web Information',
+    description: 'Boosted large-scale text processing of a 1.5TB Common Crawl dataset by 20-fold using PySpark. Implemented BERT-based sentiment analysis, achieving 90% accuracy, and developed a dynamic React application for data visualization.',
     category: 'data-engineering',
-    tags: ['Snowflake', 'SQL', 'dbt', 'AWS'],
-    githubUrl: '#',
+    tags: ['Python', 'PySpark', 'BERT', 'React'],
+    githubUrl: 'https://github.com/jovanmei/COVID19-web',
   },
   {
     id: 6,
-    title: 'HR Onboarding Bot',
-    description: 'Automated employee onboarding workflow using Power Automate, integrating with multiple systems for seamless data entry and account creation.',
-    category: 'rpa',
-    tags: ['Power Automate', 'SharePoint', 'API Integration'],
-    liveUrl: '#',
+    title: 'Kaggle: Bristol-Myers Squibb - Molecular Translation',
+    description: 'Applied Vision Transformer (ViT) and standard Transformer models to convert molecule images to their underlying chemical structure (InChI text). Preprocessed 2.5k image data and achieved an F1-score of 75.7%.',
+    category: 'data-science',
+    tags: ['Python', 'TensorFlow', 'ViT', 'Transformers'],
+    liveUrl: 'https://www.kaggle.com/competitions/bms-molecular-translation',
   },
 ];
 
