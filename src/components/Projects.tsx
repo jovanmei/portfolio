@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
 import { ExternalLink, Github, Brain, Database, Workflow } from 'lucide-react';
 
 type ProjectCategory = 'all' | 'data-science' | 'data-engineering' | 'rpa';
@@ -83,17 +82,12 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl mb-4">Featured Projects</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Explore my work in data science, engineering, and process automation
           </p>
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -117,18 +111,10 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <motion.div
+            <div
               key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl mb-3">{project.title}</h3>
@@ -167,9 +153,9 @@ export function Projects() {
                   </a>
                 )}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
