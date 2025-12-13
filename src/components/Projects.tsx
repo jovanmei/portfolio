@@ -76,8 +76,8 @@ export function Projects() {
   ];
 
   const filteredProjects = activeCategory === 'all' 
-    ? projects.slice(0, 4)
-    : projects.filter(p => p.category === activeCategory).slice(0, 4);
+    ? projects
+    : projects.filter(p => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 bg-white">
