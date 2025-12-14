@@ -1,5 +1,6 @@
 import { Code2, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Code2 className="w-8 h-8 text-blue-600" />
-            <span className="text-xl">The Space of Jovan Mei</span>
+            <span className="text-xl">Data Portfolio</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -49,21 +50,28 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden overflow-hidden">
-            <div className="flex flex-col gap-4 pt-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-left"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="flex flex-col gap-4 pt-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-left"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

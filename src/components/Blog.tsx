@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 interface BlogPost {
@@ -48,17 +49,26 @@ export function Blog() {
   return (
     <section id="blog" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl mb-4">Latest Blog Posts</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Insights and tutorials on data science, engineering, and automation
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {blogPosts.map((post, index) => (
-            <article
+            <motion.article
               key={post.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group"
             >
               <div className="mb-3">
@@ -86,7 +96,7 @@ export function Blog() {
                 </div>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 

@@ -1,6 +1,8 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
+import { WorkExperience } from './components/WorkExperience';
+import { Education } from './components/Education';
 import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
 
@@ -10,6 +12,8 @@ export default function App() {
       <Header />
       <Hero />
       <Projects />
+      <WorkExperience />
+      <Education />
       <Blog />
       <Contact />
     </div>
