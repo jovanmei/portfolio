@@ -12,33 +12,33 @@ const blogPosts = [
     category: 'Data Engineering',
     url: './blog/building-scalable-etl-pipelines-apache-airflow.html',
   },
-  // {
-  //   id: 2,
-  //   title: 'Feature Engineering Techniques for Better ML Models',
-  //   excerpt: 'Discover advanced feature engineering methods that can significantly improve your machine learning model performance.',
-  //   date: 'Oct 28, 2024',
-  //   readTime: '12 min read',
-  //   category: 'Data Science',
-  //   url: '#', // Placeholder for now
-  // },
-  // {
-  //   id: 3,
-  //   title: 'RPA Best Practices: When to Automate and When Not To',
-  //   excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
-  //   date: 'Oct 10, 2024',
-  //   readTime: '6 min read',
-  //   category: 'RPA',
-  //   url: '#', // Placeholder for now
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Optimizing SQL Queries for Large Datasets',
-  //   excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
-  //   date: 'Sep 22, 2024',
-  //   readTime: '10 min read',
-  //   category: 'Data Engineering',
-  //   url: '#', // Placeholder for now
-  // },
+  {
+    id: 2,
+    title: 'Feature Engineering Techniques for Better ML Models',
+    excerpt: 'Discover advanced feature engineering methods that can significantly improve your machine learning model performance.',
+    date: 'Oct 28, 2024',
+    readTime: '12 min read',
+    category: 'Data Science',
+    url: './blog/feature-engineering-techniques-ml-models.html',
+  },
+  {
+    id: 3,
+    title: 'RPA Best Practices: When to Automate and When Not To',
+    excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
+    date: 'Oct 10, 2024',
+    readTime: '6 min read',
+    category: 'RPA',
+    url: '#', // Placeholder for now
+  },
+  {
+    id: 4,
+    title: 'Optimizing SQL Queries for Large Datasets',
+    excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
+    date: 'Sep 22, 2024',
+    readTime: '10 min read',
+    category: 'Data Engineering',
+    url: '#', // Placeholder for now
+  },
 ];
 
 export function Blog() {

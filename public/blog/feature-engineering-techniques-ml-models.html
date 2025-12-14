@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Engineering Techniques for Better ML Models - Your Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .prose { max-width: none; }
+        .prose h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 2rem; color: #111827; }
+        .prose h2 { font-size: 1.875rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1.5rem; color: #111827; }
+        .prose h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: #111827; }
+        .prose p { margin: 1.25rem 0; line-height: 1.75; }
+        .prose ul { margin: 1.25rem 0; padding-left: 1.625rem; }
+        .prose li { margin: 0.5rem 0; line-height: 1.75; }
+        .prose pre { background-color: #1f2937; color: #e5e7eb; padding: 1rem; border-radius: 0.375rem; overflow-x: auto; margin: 1.5rem 0; }
+        .prose code { background-color: #f3f4f6; color: #111827; padding: 0.25rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; }
+        .prose pre code { background-color: transparent; padding: 0; color: inherit; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+            <a href="../index.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors mb-4">
+                ← Back to Portfolio
+            </a>
+            <div class="max-w-4xl">
+                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">Data Science</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+                    Feature Engineering Techniques for Better ML Models
+                </h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    Discover advanced feature engineering methods that can significantly improve your machine learning model performance.
+                </p>
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <span>By Your Name</span>
+                    <span>Oct 28, 2024</span>
+                    <span>12 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <article class="max-w-4xl mx-auto prose">
+                <h2>Introduction</h2>
+                <p>Feature engineering is often considered the art of machine learning. While algorithms and model architectures get most of the attention, the quality and relevance of your features often determine the success of your ML project.</p>
+                
+                <p>In this comprehensive guide, we'll explore advanced feature engineering techniques that can significantly boost your model performance.</p>
+                
+                <h2>Understanding Feature Engineering</h2>
+                <p>Feature engineering is the process of selecting, modifying, or creating features from raw data to improve machine learning model performance. It involves:</p>
+                
+                <ul>
+                    <li>Feature selection and extraction</li>
+                    <li>Feature transformation and scaling</li>
+                    <li>Feature creation and combination</li>
+                    <li>Handling missing values and outliers</li>
+                </ul>
+                
+                <h2>Advanced Techniques</h2>
+                
+                <h3>1. Polynomial Features</h3>
+                <p>Create interaction terms and polynomial combinations of existing features:</p>
+                
+                <pre><code>from sklearn.preprocessing import PolynomialFeatures
+import numpy as np
+
+# Create polynomial features
+poly = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly.fit_transform(X)
+
+# This creates features like x1*x2, x1^2, x2^2, etc.</code></pre>
+                
+                <h3>2. Target Encoding</h3>
+                <p>Encode categorical variables using target statistics:</p>
+                
+                <pre><code>def target_encode(df, categorical_col, target_col, smoothing=1):
+    # Calculate global mean
+    global_mean = df[target_col].mean()
+    
+    # Calculate category means and counts
+    category_stats = df.groupby(categorical_col)[target_col].agg(['mean', 'count'])
+    
+    # Apply smoothing
+    smoothed_means = (category_stats['mean'] * category_stats['count'] + 
+                     global_mean * smoothing) / (category_stats['count'] + smoothing)
+    
+    return df[categorical_col].map(smoothed_means)</code></pre>
+                
+                <h2>Feature Selection Strategies</h2>
+                
+                <h3>Statistical Methods</h3>
+                <p>Use statistical tests to identify the most relevant features:</p>
+                
+                <pre><code>from sklearn.feature_selection import SelectKBest, f_classif
+
+# For classification problems
+selector = SelectKBest(score_func=f_classif, k=10)
+X_selected = selector.fit_transform(X, y)
+
+# Get selected feature names
+selected_features = X.columns[selector.get_support()]</code></pre>
+                
+                <h2>Best Practices</h2>
+                
+                <h3>1. Domain Knowledge Integration</h3>
+                <ul>
+                    <li>Leverage business understanding to create meaningful features</li>
+                    <li>Collaborate with domain experts</li>
+                    <li>Consider seasonal patterns and business cycles</li>
+                </ul>
+                
+                <h3>2. Feature Engineering Pipeline</h3>
+                <ul>
+                    <li>Create reproducible feature engineering pipelines</li>
+                    <li>Version control your feature engineering code</li>
+                    <li>Document feature definitions and business logic</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>Feature engineering is both an art and a science. While automated tools can help, domain knowledge and creative thinking often lead to the most impactful features. The investment in good feature engineering will pay dividends in model performance and interpretability.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <a href="../index.html" class="text-blue-600 hover:text-blue-700 transition-colors">
+                ← Back to Portfolio
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
