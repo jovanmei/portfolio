@@ -1,7 +1,7 @@
 
-  # Personal Portfolio Blog
+  # Space Orbit
 
-  This is a code bundle for Personal Portfolio Blog. The original project is available at https://www.figma.com/design/BimlExSuRN1R09DOei7Pe0/Personal-Portfolio-Blog.
+ The original project is available at https://www.figma.com/design/BimlExSuRN1R09DOei7Pe0/Personal-Portfolio-Blog.
 
   ## Running the code
 
