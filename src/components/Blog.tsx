@@ -1,48 +1,44 @@
 import { motion } from 'motion/react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  category: string;
-}
-
-const blogPosts: BlogPost[] = [
+// Blog posts data for preview
+const blogPosts = [
   {
     id: 1,
     title: 'Building Scalable ETL Pipelines with Apache Airflow',
     excerpt: 'Learn how to design and implement production-ready data pipelines that can handle millions of records with ease.',
-    date: 'Nov 15, 2024',
+    date: 'Nov 15, 2025',
     readTime: '8 min read',
     category: 'Data Engineering',
+    url: './blog/building-scalable-etl-pipelines-apache-airflow.html',
   },
-  {
-    id: 2,
-    title: 'Feature Engineering Techniques for Better ML Models',
-    excerpt: 'Discover advanced feature engineering methods that can significantly improve your machine learning model performance.',
-    date: 'Oct 28, 2024',
-    readTime: '12 min read',
-    category: 'Data Science',
-  },
-  {
-    id: 3,
-    title: 'RPA Best Practices: When to Automate and When Not To',
-    excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
-    date: 'Oct 10, 2024',
-    readTime: '6 min read',
-    category: 'RPA',
-  },
-  {
-    id: 4,
-    title: 'Optimizing SQL Queries for Large Datasets',
-    excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
-    date: 'Sep 22, 2024',
-    readTime: '10 min read',
-    category: 'Data Engineering',
-  },
+  // {
+  //   id: 2,
+  //   title: 'Feature Engineering Techniques for Better ML Models',
+  //   excerpt: 'Discover advanced feature engineering methods that can significantly improve your machine learning model performance.',
+  //   date: 'Oct 28, 2024',
+  //   readTime: '12 min read',
+  //   category: 'Data Science',
+  //   url: '#', // Placeholder for now
+  // },
+  // {
+  //   id: 3,
+  //   title: 'RPA Best Practices: When to Automate and When Not To',
+  //   excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
+  //   date: 'Oct 10, 2024',
+  //   readTime: '6 min read',
+  //   category: 'RPA',
+  //   url: '#', // Placeholder for now
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Optimizing SQL Queries for Large Datasets',
+  //   excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
+  //   date: 'Sep 22, 2024',
+  //   readTime: '10 min read',
+  //   category: 'Data Engineering',
+  //   url: '#', // Placeholder for now
+  // },
 ];
 
 export function Blog() {
@@ -69,7 +65,7 @@ export function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="mb-3">
                 <span className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
@@ -94,7 +90,18 @@ export function Blog() {
                     {post.readTime}
                   </span>
                 </div>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors group/arrow"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering the card click
+                  }}
+                >
+                  <span className="text-sm font-medium">Read More</span>
+                  <ArrowRight className="w-5 h-5 group-hover/arrow:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.article>
           ))}

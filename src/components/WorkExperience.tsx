@@ -17,17 +17,17 @@ interface Experience {
 const experienceData: Experience[] = [
   {
     id: 1,
-    company: 'Volkswagen',
+    company: 'Volkswagen (Anhui)',
     role: 'Supply Chain Data Analyst',
     period: 'Oct 2024 - Present',
     location: 'Hefei, China',
     current: true,
     logoUrl: 'https://images.unsplash.com/photo-1619679505795-a4d0e6be5e02?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     responsibilities: [
-      'Led the design and implementation of scalable data pipelines processing 5M+ records daily using Apache Spark and Airflow',
-      'Architected cloud-based data warehouse solutions on AWS, reducing query times by 60%',
-      'Built automated ETL framework with Python and Power Automate, integrating multi-system data into Power BI dashboards, ensuring data accuracy and establishing visual tracking system for 500+ parts.',
-      'Implemented Kanban agile methodology for digital transformation projects, coordinating cross-functional teams to deliver system upgrades 30% faster than scheduled.'
+      'Automated part master data processing and demand forecast communications using Python-based RPA, saving 150+ labor hours and improving data accuracy.',
+      'Built automated ETL pipelines with Python and Power Automate to consolidate multi-source supply chain data into Power BI, enabling real-time visibility and tracking for 500+ parts.',
+      'Supported the implementation of a low-code intelligent replenishment system on Mendix, digitizing approval workflows and reducing manual processing by 120 hours per month.',
+      'Drove digital transformation projects using Kanban agile method, acting as system owner to align business requirements with developers and deliver system enhancements 30\% faster through cross-functional collaboration',
     ],
   },
   {
@@ -38,9 +38,9 @@ const experienceData: Experience[] = [
     location: 'Amsterdam, Netherlands',
     logoUrl: 'https://images.unsplash.com/photo-1660792713815-390b17a48a1c?q=80&w=1462&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     responsibilities: [
-      'Developed automated programs and ETL data pipelines using Python and SQL to integrate multi-source data into Qlik dashboards, reducing data processing time by 20% and improving overall data analysis efficiency by 15%.',
-      'Standardized the data integration processes, ensuring knowledge sharing and establishing best practices for real-settings',
-      'Conducted exploratory data analysis and feature engineering for machine learning projects',
+      'Designed and implemented automated ETL pipelines using Python and SQL to integrate and transform business data into Qlik dashboards, reducing data processing time by 20\% and accelerating analytics delivery across teams.',
+      'Deployed and maintained automated analytics scripts for predictive modeling, facilitating A/B testing and model validation in production environments.',
+      'Performed exploratory data analysis and feature engineering to prepare data for modeling and dashboarding, translating insights into actionable KPIs for stakeholders.',
     ],
   },
   // {
@@ -75,8 +75,8 @@ const experienceData: Experience[] = [
 const formatTechnicalTerms = (text: string): React.ReactNode => {
   const technicalTerms = [
     'Python', 'SQL', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'PostgreSQL', 'MongoDB',
-    'Apache Spark', 'Airflow', 'AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Git',
-    'Tableau', 'Power BI', 'Qlik', 'scikit-learn', 'TensorFlow', 'PyTorch', 'Pandas',
+    'Apache Spark', 'Airflow', 'AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Git', 'Power Automate',
+    'Tableau', 'Power BI', 'Qlik', 'scikit-learn', 'TensorFlow', 'PyTorch', 'Pandas', 'Mendix',
     'NumPy', 'REST', 'API', 'GraphQL', 'Redis', 'Elasticsearch', 'Jenkins', 'CI/CD',
     'Spark', 'Hadoop', 'Kafka', 'ETL', 'ML', 'AI', 'UiPath', 'RPA', 'SAP', 'Salesforce',
     'SharePoint', 'A/B testing', 'machine learning', 'data pipelines', 'data warehouse', 'Kanban'

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Scalable ETL Pipelines with Apache Airflow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .prose { max-width: none; }
+        .prose h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 2rem; color: #111827; }
+        .prose h2 { font-size: 1.875rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1.5rem; color: #111827; }
+        .prose h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: #111827; }
+        .prose p { margin: 1.25rem 0; line-height: 1.75; }
+        .prose ul { margin: 1.25rem 0; padding-left: 1.625rem; }
+        .prose li { margin: 0.5rem 0; line-height: 1.75; }
+        .prose pre { background-color: #1f2937; color: #e5e7eb; padding: 1rem; border-radius: 0.375rem; overflow-x: auto; margin: 1.5rem 0; }
+        .prose code { background-color: #f3f4f6; color: #111827; padding: 0.25rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; }
+        .prose pre code { background-color: transparent; padding: 0; color: inherit; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+            <a href="../index.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors mb-4">
+                ← Back to Portfolio
+            </a>
+            <div class="max-w-4xl">
+                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">Data Engineering</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+                    Building Scalable ETL Pipelines with Apache Airflow
+                </h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    Learn how to design and implement production-ready data pipelines that can handle millions of records with ease.
+                </p>
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <span>By Your Name</span>
+                    <span>Nov 15, 2024</span>
+                    <span>8 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <article class="max-w-4xl mx-auto prose">
+                <h2>Introduction</h2>
+                <p>In today's data-driven world, building scalable and reliable ETL (Extract, Transform, Load) pipelines is crucial for any organization dealing with large volumes of data. Apache Airflow has emerged as one of the most popular tools for orchestrating complex data workflows.</p>
+                
+                <h2>What is Apache Airflow?</h2>
+                <p>Apache Airflow is an open-source platform designed to programmatically author, schedule, and monitor workflows. It allows you to define workflows as code, making them more maintainable, versionable, testable, and collaborative.</p>
+                
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Dynamic Pipeline Generation:</strong> Pipelines are configured as code (Python), allowing for dynamic pipeline generation</li>
+                    <li><strong>Extensible:</strong> Easily define your own operators, executors and extend the library to fit your environment</li>
+                    <li><strong>Elegant UI:</strong> Rich command line utilities and web application for pipeline monitoring</li>
+                    <li><strong>Scalable:</strong> Modular architecture and message queue to orchestrate arbitrary number of workers</li>
+                </ul>
+                
+                <h2>Setting Up Your First Pipeline</h2>
+                <p>Let's start by creating a simple ETL pipeline that extracts data from a CSV file, transforms it, and loads it into a database.</p>
+                
+                <pre><code>from datetime import datetime, timedelta
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash_operator import BashOperator
+import pandas as pd
+
+default_args = {
+    'owner': 'data-team',
+    'depends_on_past': False,
+    'start_date': datetime(2024, 1, 1),
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5)
+}
+
+dag = DAG(
+    'etl_pipeline',
+    default_args=default_args,
+    description='A simple ETL pipeline',
+    schedule_interval=timedelta(days=1),
+    catchup=False
+)</code></pre>
+                
+                <h2>Best Practices for Production</h2>
+                
+                <h3>1. Error Handling and Monitoring</h3>
+                <p>Implement comprehensive error handling and monitoring to ensure your pipelines are robust and observable:</p>
+                
+                <pre><code>def extract_data(**context):
+    try:
+        # Your extraction logic here
+        data = pd.read_csv('source_data.csv')
+        return data.to_json()
+    except Exception as e:
+        # Log the error and raise
+        logging.error(f"Data extraction failed: {str(e)}")
+        raise</code></pre>
+                
+                <h3>2. Data Quality Checks</h3>
+                <p>Always implement data quality checks to ensure the integrity of your data:</p>
+                
+                <ul>
+                    <li>Schema validation</li>
+                    <li>Null value checks</li>
+                    <li>Data freshness validation</li>
+                    <li>Business rule validation</li>
+                </ul>
+                
+                <h3>3. Scalability Considerations</h3>
+                <p>When dealing with large datasets, consider these optimization strategies:</p>
+                
+                <ul>
+                    <li><strong>Parallel Processing:</strong> Use Airflow's parallel execution capabilities</li>
+                    <li><strong>Incremental Loading:</strong> Process only new or changed data</li>
+                    <li><strong>Resource Management:</strong> Configure appropriate resource limits</li>
+                    <li><strong>Connection Pooling:</strong> Reuse database connections efficiently</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>Apache Airflow provides a powerful and flexible platform for building scalable ETL pipelines. By following best practices around error handling, monitoring, and scalability, you can create robust data workflows that can handle millions of records reliably.</p>
+                
+                <p>The key to success with Airflow is to start simple, iterate quickly, and gradually add complexity as your requirements grow. Remember to always prioritize observability and maintainability in your pipeline design.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <a href="../index.html" class="text-blue-600 hover:text-blue-700 transition-colors">
+                ← Back to Portfolio
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
