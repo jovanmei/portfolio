@@ -16,29 +16,29 @@ const blogPosts = [
     id: 2,
     title: 'Feature Engineering Techniques for Better ML Models',
     excerpt: 'Discover advanced feature engineering methods that can significantly improve your machine learning model performance.',
-    date: 'Oct 28, 2024',
+    date: 'Oct 28, 2025',
     readTime: '12 min read',
     category: 'Data Science',
     url: './blog/feature-engineering-techniques-ml-models.html',
   },
-  {
-    id: 3,
-    title: 'RPA Best Practices: When to Automate and When Not To',
-    excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
-    date: 'Oct 10, 2024',
-    readTime: '6 min read',
-    category: 'RPA',
-    url: '#', // Placeholder for now
-  },
-  {
-    id: 4,
-    title: 'Optimizing SQL Queries for Large Datasets',
-    excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
-    date: 'Sep 22, 2024',
-    readTime: '10 min read',
-    category: 'Data Engineering',
-    url: '#', // Placeholder for now
-  },
+  // {
+  //   id: 3,
+  //   title: 'RPA Best Practices: When to Automate and When Not To',
+  //   excerpt: 'A comprehensive guide on identifying the right processes for automation and avoiding common pitfalls in RPA implementation.',
+  //   date: 'Oct 10, 2024',
+  //   readTime: '6 min read',
+  //   category: 'RPA',
+  //   url: '#', // Placeholder for now
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Optimizing SQL Queries for Large Datasets',
+  //   excerpt: 'Practical tips and techniques for writing efficient SQL queries that perform well even with massive datasets.',
+  //   date: 'Sep 22, 2024',
+  //   readTime: '10 min read',
+  //   category: 'Data Engineering',
+  //   url: '#', // Placeholder for now
+  // },
 ];
 
 export function Blog() {
@@ -51,9 +51,9 @@ export function Blog() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl mb-4">Latest Blog Posts</h2>
+          <h2 className="text-3xl md:text-4xl mb-4">Posts</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Insights and tutorials on data science, engineering, and automation
+            Lesson-learned on data science, engineering, and automation
           </p>
         </motion.div>
 
