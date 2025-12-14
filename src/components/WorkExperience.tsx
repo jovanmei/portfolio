@@ -43,32 +43,32 @@ const experienceData: Experience[] = [
       'Conducted exploratory data analysis and feature engineering for machine learning projects',
     ],
   },
-  {
-    id: 3,
-    company: 'Automation Pro Systems',
-    role: 'RPA Developer',
-    period: 'Jun 2020 - Feb 2021',
-    location: 'Toronto, Canada',
-    responsibilities: [
-      'Designed and deployed RPA solutions using UiPath, automating 15+ business processes',
-      'Reduced manual processing time by 70% through intelligent document processing automation',
-      'Integrated RPA bots with enterprise systems including SAP, Salesforce, and SharePoint',
-      'Provided technical training and support to business users on automation tools',
-    ],
-  },
-  {
-    id: 4,
-    company: 'Engineering Dynamics Ltd.',
-    role: 'Junior Software Engineer',
-    period: 'Sep 2018 - May 2020',
-    location: "St. John's, Canada",
-    responsibilities: [
-      'Developed full-stack web applications using React, Node.js, and PostgreSQL',
-      'Participated in agile development processes and code reviews',
-      'Created RESTful APIs and integrated third-party services',
-      'Maintained and optimized legacy systems to improve performance',
-    ],
-  },
+  // {
+  //   id: 3,
+  //   company: 'Automation Pro Systems',
+  //   role: 'RPA Developer',
+  //   period: 'Jun 2020 - Feb 2021',
+  //   location: 'Toronto, Canada',
+  //   responsibilities: [
+  //     'Designed and deployed RPA solutions using UiPath, automating 15+ business processes',
+  //     'Reduced manual processing time by 70% through intelligent document processing automation',
+  //     'Integrated RPA bots with enterprise systems including SAP, Salesforce, and SharePoint',
+  //     'Provided technical training and support to business users on automation tools',
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   company: 'Engineering Dynamics Ltd.',
+  //   role: 'Junior Software Engineer',
+  //   period: 'Sep 2018 - May 2020',
+  //   location: "St. John's, Canada",
+  //   responsibilities: [
+  //     'Developed full-stack web applications using React, Node.js, and PostgreSQL',
+  //     'Participated in agile development processes and code reviews',
+  //     'Created RESTful APIs and integrated third-party services',
+  //     'Maintained and optimized legacy systems to improve performance',
+  //   ],
+  // },
 ];
 
 export function WorkExperience() {

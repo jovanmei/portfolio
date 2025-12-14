@@ -11,7 +11,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-6xl mb-6">
-            Data Science & Automation Expert
+            About Me
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
             Transforming data into insights and automating workflows with RPA solutions

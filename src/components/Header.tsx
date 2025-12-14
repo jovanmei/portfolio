@@ -14,6 +14,8 @@ export function Header() {
   const navItems = [
     { label: 'Home', id: 'home' },
     { label: 'Projects', id: 'projects' },
+    { label: 'Career', id: 'experience' },
+    { label: 'Education', id: 'education' },
     { label: 'Blog', id: 'blog' },
     { label: 'Contact', id: 'contact' },
   ];
@@ -24,7 +26,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Code2 className="w-8 h-8 text-blue-600" />
-            <span className="text-xl">Data Portfolio</span>
+            <span className="text-xl">Jovan's Space Orbit</span>
           </div>
 
           {/* Desktop Navigation */}

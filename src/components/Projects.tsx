@@ -119,7 +119,7 @@ export function Projects() {
         {/* Projects Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {filteredProjects.map((project) => (
             <motion.div
@@ -149,6 +149,8 @@ export function Projects() {
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     <Github className="w-5 h-5" />
@@ -158,6 +160,8 @@ export function Projects() {
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     <ExternalLink className="w-5 h-5" />
