@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface Experience {
@@ -17,9 +17,9 @@ const experienceData: Experience[] = [
   {
     id: 1,
     company: 'Volkswagen',
-    role: 'Senior Data Engineer',
-    period: 'Jan 2023 - Present',
-    location: 'Amsterdam, Netherlands',
+    role: 'Supply Chain Data Analyst',
+    period: 'Oct 2024 - Present',
+    location: 'Hefei, China',
     current: true,
     logoUrl: 'https://images.unsplash.com/photo-1637760561008-c7423e2237f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWb2xrc3dhZ2VuJTIwbG9nb3xlbnwxfHx8fDE3NjU2OTIyMjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     responsibilities: [
@@ -31,9 +31,9 @@ const experienceData: Experience[] = [
   },
   {
     id: 2,
-    company: 'Philips',
-    role: 'Data Scientist',
-    period: 'Mar 2021 - Dec 2022',
+    company: 'Royal Philips',
+    role: 'Data Analytic Intern',
+    period: 'Jan 2024 - Jul 2024',
     location: 'Amsterdam, Netherlands',
     logoUrl: 'https://images.unsplash.com/photo-1765133860544-03f0f6fd3eb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxQaGlsaXBzJTIwY29tcGFueSUyMGxvZ298ZW58MXx8fHwxNzY1NjkyMjI0fDA&ixlib=rb-4.1.0&q=80&w=1080',
     responsibilities: [
@@ -87,7 +87,7 @@ export function WorkExperience() {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Timeline */}
           <div className="relative">
             {/* Vertical Line */}
@@ -129,7 +129,7 @@ export function WorkExperience() {
                               />
                             </div>
                           )}
-                          <h3 className="text-xl">{exp.role}</h3>
+                          <h3 className="text-xl font-bold">{exp.role}</h3>
                         </div>
                         {exp.current && (
                           <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full whitespace-nowrap">
@@ -137,7 +137,7 @@ export function WorkExperience() {
                           </span>
                         )}
                       </div>
-                      <p className="text-blue-600 mb-3">{exp.company}</p>
+                      <p className="text-blue-600 mb-3 font-bold">{exp.company}</p>
                       
                       <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                         <div className="flex items-center gap-1">
