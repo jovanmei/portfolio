@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import React from 'react';
 
 interface Experience {
   id: number;
@@ -21,12 +22,12 @@ const experienceData: Experience[] = [
     period: 'Oct 2024 - Present',
     location: 'Hefei, China',
     current: true,
-    logoUrl: 'https://images.unsplash.com/photo-1637760561008-c7423e2237f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWb2xrc3dhZ2VuJTIwbG9nb3xlbnwxfHx8fDE3NjU2OTIyMjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    logoUrl: 'https://images.unsplash.com/photo-1619679505795-a4d0e6be5e02?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     responsibilities: [
       'Led the design and implementation of scalable data pipelines processing 5M+ records daily using Apache Spark and Airflow',
       'Architected cloud-based data warehouse solutions on AWS, reducing query times by 60%',
-      'Mentored junior engineers and established best practices for data quality and governance',
-      'Collaborated with cross-functional teams to deliver ML-ready datasets for business intelligence',
+      'Built automated ETL framework with Python and Power Automate, integrating multi-system data into Power BI dashboards, ensuring data accuracy and establishing visual tracking system for 500+ parts.',
+      'Implemented Kanban agile methodology for digital transformation projects, coordinating cross-functional teams to deliver system upgrades 30% faster than scheduled.'
     ],
   },
   {
@@ -35,11 +36,10 @@ const experienceData: Experience[] = [
     role: 'Data Analytic Intern',
     period: 'Jan 2024 - Jul 2024',
     location: 'Amsterdam, Netherlands',
-    logoUrl: 'https://images.unsplash.com/photo-1765133860544-03f0f6fd3eb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxQaGlsaXBzJTIwY29tcGFueSUyMGxvZ298ZW58MXx8fHwxNzY1NjkyMjI0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    logoUrl: 'https://images.unsplash.com/photo-1660792713815-390b17a48a1c?q=80&w=1462&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     responsibilities: [
-      'Developed predictive models using Python and scikit-learn to optimize customer retention strategies',
-      'Built automated reporting dashboards using Tableau and Power BI for stakeholder insights',
-      'Implemented A/B testing frameworks that increased conversion rates by 25%',
+      'Developed automated programs and ETL data pipelines using Python and SQL to integrate multi-source data into Qlik dashboards, reducing data processing time by 20% and improving overall data analysis efficiency by 15%.',
+      'Standardized the data integration processes, ensuring knowledge sharing and establishing best practices for real-settings',
       'Conducted exploratory data analysis and feature engineering for machine learning projects',
     ],
   },
@@ -70,6 +70,48 @@ const experienceData: Experience[] = [
   //   ],
   // },
 ];
+
+// Function to format technical terms with code styling
+const formatTechnicalTerms = (text: string): React.ReactNode => {
+  const technicalTerms = [
+    'Python', 'SQL', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'PostgreSQL', 'MongoDB',
+    'Apache Spark', 'Airflow', 'AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Git',
+    'Tableau', 'Power BI', 'Qlik', 'scikit-learn', 'TensorFlow', 'PyTorch', 'Pandas',
+    'NumPy', 'REST', 'API', 'GraphQL', 'Redis', 'Elasticsearch', 'Jenkins', 'CI/CD',
+    'Spark', 'Hadoop', 'Kafka', 'ETL', 'ML', 'AI', 'UiPath', 'RPA', 'SAP', 'Salesforce',
+    'SharePoint', 'A/B testing', 'machine learning', 'data pipelines', 'data warehouse', 'Kanban'
+  ];
+
+  let formattedText: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  // Create a regex pattern that matches any of the technical terms (case insensitive)
+  const pattern = new RegExp(`\\b(${technicalTerms.join('|')})\\b`, 'gi');
+  let match;
+
+  while ((match = pattern.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      formattedText.push(text.slice(lastIndex, match.index));
+    }
+    
+    // Add the technical term with code styling
+    formattedText.push(
+      <code key={`${match.index}-${match[0]}`} className="px-1.5 py-0.5 bg-gray-100 text-gray-800 rounded text-base font-mono">
+        {match[0]}
+      </code>
+    );
+    
+    lastIndex = pattern.lastIndex;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    formattedText.push(text.slice(lastIndex));
+  }
+
+  return formattedText.length > 0 ? formattedText : text;
+};
 
 export function WorkExperience() {
   return (
@@ -156,7 +198,7 @@ export function WorkExperience() {
                       {exp.responsibilities.map((responsibility, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <p className="text-sm text-gray-700">{responsibility}</p>
+                          <p className="text-sm text-gray-700">{formatTechnicalTerms(responsibility)}</p>
                         </div>
                       ))}
                     </div>

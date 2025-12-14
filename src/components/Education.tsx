@@ -23,8 +23,8 @@ const educationData: Education[] = [
     major: 'Computer Science',
     period: '2022 - 2024',
     location: 'Amsterdam, Netherlands',
-    logoUrl: 'https://images.unsplash.com/photo-1651238827881-7cf9aeaedde4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVbml2ZXJzaXR5JTIwb2YlMjBBbXN0ZXJkYW0lMjBsb2dvfGVufDF8fHx8MTc2NTY3NDM1NHww&ixlib=rb-4.1.0&q=80&w=1080',
-    grade: 'Cum Laude 7.8/10',
+    logoUrl: 'https://d189tumsugqfi4.cloudfront.net/_1680x1050_crop_center-center_75_none/HvA_2021-11-23-082948_uops.jpg',
+    grade: 'Cum Laude - 7.8/10',
     courses: [
       'Machine Learning',
       'Data Mining',
@@ -32,7 +32,7 @@ const educationData: Education[] = [
       'Big Data Engineering',
       'Natural Language Processing',
     ],
-    thesis: 'Deep Learning Approaches for Automated Text Classification in Multi-lingual Datasets',
+    thesis: 'Post-processing Diversification Approach in Top-N Recommendation with Side Information',
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const educationData: Education[] = [
     period: '2018 - 2022',
     location: "China & Canada",
     logoUrl: 'https://images.unsplash.com/photo-1665277929148-518d01092657?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNZW1vcmlhbCUyMFVuaXZlcnNpdHklMjBOZXdmb3VuZGxhbmQlMjBsb2dvfGVufDF8fHx8MTc2NTY3NDM1NHww&ixlib=rb-4.1.0&q=80&w=1080',
-    grade: 'First Class Honours 3.9/10',
+    grade: 'First Class Honours - 3.9/4',
     courses: [
       'Software Engineering',
       'Database Systems',
