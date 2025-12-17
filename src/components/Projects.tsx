@@ -30,7 +30,16 @@ const projects: Project[] = [
     categories: ['data-engineering', 'rpa'],
     tags: ['Python', 'RPA', 'Process Automation', 'Data Processing'],
     // githubUrl: '#',
-  },  
+  },
+  {
+    id: 9,
+    title: 'Data Warehouse based Dashboard',
+    description: 'Developed a Python-based ETL solution to automate master data processing, analytics, and visualization to build the dashboard',
+    categories: ['data-engineering'],
+    tags: ['Python', 'ETL', 'Spark', 'Visualization'],
+    githubUrl: 'https://github.com/jovanmei/dw-dashborad/',
+    liveUrl: 'https://dw-dashborad.streamlit.app/',
+  },    
   {
     id: 3,
     title: 'Post-processing Diversification in Top-N Recommendation with Side Information',
