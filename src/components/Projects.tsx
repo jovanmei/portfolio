@@ -33,8 +33,8 @@ const projects: Project[] = [
   },
   {
     id: 9,
-    title: 'Data Warehouse based Dashboard',
-    description: 'Developed a Python-based ETL solution to automate master data processing, analytics, and visualization to build the dashboard',
+    title: 'Data Warehouse ETL Dashboard',
+    description: 'Developed a Python-based ETL solution to automate master data processing, analytics, and visualization. Interactive dashboard powered by the Gold layer of the PySpark ETL pipeline. Data is aggregated by month, customer segment, and RFM value segment.',
     categories: ['data-engineering'],
     tags: ['Python', 'ETL', 'Spark', 'Visualization'],
     githubUrl: 'https://github.com/jovanmei/dw-dashborad/',
