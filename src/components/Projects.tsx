@@ -38,7 +38,7 @@ const projects: Project[] = [
     categories: ['data-engineering'],
     tags: ['Python', 'ETL', 'Spark', 'Visualization'],
     githubUrl: 'https://github.com/jovanmei/dw-dashborad/',
-    liveUrl: 'https://db-kafka.streamlit.app/',
+    liveUrl: 'https://dwdashboard.streamlit.app/',
   },    
   {
     id: 3,
